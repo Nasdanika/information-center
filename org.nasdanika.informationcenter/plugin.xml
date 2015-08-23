@@ -18,20 +18,10 @@
    </extension>
    <extension point="org.nasdanika.web.route">
       <root_route
-            class="org.nasdanika.informationcenter.NasdanikaInformationCenterRoute"
+            class="org.nasdanika.informationcenter.DocAppRoute"
             method="GET"
-            pattern="nasdanikainformationcenter.html">
+            pattern="doc.html">
       </root_route>
-      <object_route
-            class="org.nasdanika.web.routes.ServiceRoute"
-            method="*"
-            pattern="[^/]+/services/.+"
-            target="org.eclipse.emf.cdo.view.CDOView">
-         <property
-               name="offset"
-               value="2">
-         </property>
-      </object_route>
    </extension>
    <extension
          point="org.eclipse.equinox.http.registry.servlets">
@@ -48,8 +38,7 @@
       </resource>
    </extension>   
    <extension point="org.nasdanika.web.html_factory">
-      <default_html_factory
-            bootstrapCssContainer="/bootstrap/css">
+      <default_html_factory bootstrapCssContainer="/bootstrap/css">
             <script>
                /js/jquery-1.11.3.min.js
             </script>
@@ -62,9 +51,18 @@
             <script>
                /js/require.js
             </script>
+            <script>
+               /js/require-config.js
+            </script>
             <stylesheet>
                /font-awesome-4.4.0/css/font-awesome.min.css
             </stylesheet>            
+             <script>
+               /js/lightbox.min.js
+            </script>
+            <stylesheet>
+               /css/lightbox.css
+            </stylesheet>
       </default_html_factory>
    </extension>
    <extension point="org.nasdanika.cdo.security.security_policy">

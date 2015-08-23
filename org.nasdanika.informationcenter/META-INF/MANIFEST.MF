@@ -5,4 +5,7 @@ Bundle-SymbolicName: org.nasdanika.informationcenter; singleton:=true
 Bundle-Version: 1.0.0.qualifier
 Bundle-RequiredExecutionEnvironment: JavaSE-1.7
 Require-Bundle: org.nasdanika.cdo.web,
- org.eclipse.equinox.http.registry
+ org.eclipse.equinox.http.registry,
+ org.apache.commons.lang3;bundle-version="3.3.2",
+ org.nasdanika.cdo.web.doc;bundle-version="0.1.0"
+Service-Component: OSGI-INF/doc-route.xml
