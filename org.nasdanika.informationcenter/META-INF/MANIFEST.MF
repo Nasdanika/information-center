@@ -1,0 +1,8 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: org.nasdanika.informationcenter
+Bundle-SymbolicName: org.nasdanika.informationcenter; singleton:=true
+Bundle-Version: 1.0.0.qualifier
+Bundle-RequiredExecutionEnvironment: JavaSE-1.7
+Require-Bundle: org.nasdanika.cdo.web,
+ org.eclipse.equinox.http.registry
