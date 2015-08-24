@@ -18,3 +18,6 @@ To stop the server issue ``shutdown`` command in the OSGi console. If the progra
 * Add model bundles to the ``org.nasdanika.informationcenter.feature/feature.xml`` file.
 * Build and launch the product.
 * Open documentation page in the browser - you should see documentation for your models under ``Packages/Global``.  
+
+## Screenshot
+![Information Center](information-center.png)
