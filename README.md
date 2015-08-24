@@ -7,7 +7,9 @@ It can also be configured to host ECore model documentation for user-provided mo
 * ``mvn clean verify`` in ``org.nasdanika.informationcenter.aggregator`` project.
 * Navigate to ``org.nasdanika.informationcenter.repository`` project, ``target/products/org.nasdanika.informationcenter.product/<platform specific>`` product folder, e.g.``target\products\org.nasdanika.informationcenter.product\win32\win32\x86_64`` on Windows 64.
 * Launch eclipse executable, e.g. ``eclipse.exe`` on Windows.
-* Open http://localhost:8080/information-center/index.html in a web browser.    
+* Open http://localhost:8080/information-center/index.html in a web browser. 
+
+To stop the server issue ``shutdown`` command in the OSGi console. If the program doesn't exit, issue some other command after a couple of seconds, e.g. ``ss``.   
 
 ## Hosting documentation of user-provided models
 * Add documentation annotations to your models. You can use plain text or markdown. See ``Nasdanika Foundation  Server / Web / CDO / Documentation Authoring`` topic in the Information Center for detailed information.
