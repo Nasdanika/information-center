@@ -24,13 +24,6 @@
       </root_route>
    </extension>
    <extension
-         point="org.eclipse.equinox.http.registry.servlets">
-      <servlet
-            alias="/session"
-            class="org.nasdanika.web.WebSocketNotificationServlet">
-      </servlet>
-   </extension>
-   <extension
          point="org.eclipse.equinox.http.registry.resources">
       <resource
             alias="/"
