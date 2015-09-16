@@ -35,10 +35,11 @@ public class DocAppRoute implements Route {
 				return super.tocDiv().style("overflow-y", "scroll");
 			}
 		};
-		row.cell(documentationPanelFactory.leftPanel()).id("left-panel");
+		row.cell(documentationPanelFactory.leftPanel()).id("left-panel").style("min-width", "17em");
 		row.cell("")
 			.id("splitter")
 			.style("width", "5px")
+			.style("min-width", "5px")
 			.style("padding", "0px")
 			.style("background", "#d9edf7")
 			.style("border", "solid 1px #bce8f1")
@@ -49,7 +50,7 @@ public class DocAppRoute implements Route {
 				table, 
 				htmlFactory.tag(TagName.script, getClass().getResource("Splitter.js")),
 				htmlFactory.tag(TagName.script, getClass().getResource("Scroller.js")),
-				htmlFactory.tag(TagName.script, getClass().getResource("setHeight.js")));
+				htmlFactory.tag(TagName.script, getClass().getResource("SetDimensions.js")));
 		
 		final AutoCloseable app = htmlFactory.bootstrapRouterApplication(
 				Theme.Default,
