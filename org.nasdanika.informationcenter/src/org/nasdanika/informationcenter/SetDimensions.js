@@ -6,6 +6,7 @@ require(['jquery', '/information-center/router/doc/resources/js/left-panel.js'],
 	var body = jQuery("body");
 	var docContent = jQuery('#doc-content');	
 	var toc = jQuery('#toc');
+	var searchResults = jQuery('div#search-container > ol');
 	var oldBottom = -1;
 	
 	function resizeHandler() {
@@ -32,6 +33,10 @@ require(['jquery', '/information-center/router/doc/resources/js/left-panel.js'],
 			var tocRect = toc[0].getBoundingClientRect();
 			var tocHeight = docContentBottom - tocRect.top - 1;
 			toc.height(tocHeight);
+			
+			var searchResultsRect = searchResults[0].getBoundingClientRect();
+			var searchResultsHeight = docContentBottom - searchResultsRect.top - 1;
+			searchResults.height(searchResultsHeight);
 			
 			// Scrolling current selection into view
 			tocTreePromise.then(function(tocTree) {
