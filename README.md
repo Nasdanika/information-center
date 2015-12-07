@@ -2,6 +2,12 @@
 A web application for serving Nasdanika Foundation Server documentation. 
 It can also be configured to host ECore model documentation for user-provided models.
 
+## Evaluate
+You can use pre-built binaries to evaluate the information center without having to build it:
+
+* [Linux x86 64](org.nasdanika.informationcenter.product-linux.gtk.x86_64.zip) 
+* [Windows 64](org.nasdanika.informationcenter.product-win32.win32.x86_64.zip)
+
 ## Set up
 * Clone the repository or download the zip file and unzip.
 * ``mvn clean verify`` in ``org.nasdanika.informationcenter.aggregator`` project.
