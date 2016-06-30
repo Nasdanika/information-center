@@ -2,6 +2,8 @@
 A web application for serving Nasdanika Foundation Server documentation. 
 It can also be configured to host ECore model documentation for user-provided models.
 
+To get an idea of the information center capabilities take a look at the [Documentation System Overview](http://server-side-java-development-for-innovators.books.nasdanika.org/chapter-0-setup/documentation-system-overview.html) page in the [Server Side Java Development for Innovators](http://server-side-java-development-for-innovators.books.nasdanika.org/) book.
+
 ## Evaluate
 You can use pre-built binaries to evaluate the information center without having to build it:
 
