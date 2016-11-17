@@ -9,7 +9,7 @@ import org.nasdanika.html.RowContainer.Row;
 import org.nasdanika.html.Tag;
 import org.nasdanika.html.Tag.TagName;
 import org.nasdanika.html.Theme;
-import org.nasdanika.html.UIElement.Style;
+import org.nasdanika.html.Bootstrap.Style;
 import org.nasdanika.web.Action;
 import org.nasdanika.web.HttpServletRequestContext;
 import org.nasdanika.web.Route;
@@ -18,10 +18,10 @@ public class DocAppRoute implements Route {
 
 	@Override
 	public Action execute(HttpServletRequestContext context, Object... args) throws Exception {
-		HTMLFactory htmlFactory = context.adapt(HTMLFactory.class);
+		HTMLFactory htmlFactory = HTMLFactory.INSTANCE;
 		ApplicationPanel appPanel = htmlFactory.applicationPanel()
 				.style(Style.INFO) 
-				.header("Nasdanika Information Center")
+				.header("Bounded Context Generator POC Domain Information Center")
 				.headerLink(context.getRequest().getContextPath()+"/router/doc.html")
 				.style("margin-bottom", "0px")
 				.id("docAppPanel");
@@ -63,6 +63,19 @@ public class DocAppRoute implements Route {
 				StringEscapeUtils.escapeHtml4("Documentation"), 
 				null, //"main/doc/index.html", 
 				htmlFactory.fragment(
+						// --- Stylesheets ---					
+						htmlFactory.tag(TagName.link)
+							.attribute("rel", "stylesheet")
+							.attribute("href", context.getContextURL()+"/doc/bundle/org.nasdanika.web.resources/bootstrap/css/bootstrap.min.css"),							
+						htmlFactory.tag(TagName.link)
+							.attribute("rel", "stylesheet")
+							.attribute("href", context.getContextURL()+"/doc/bundle/org.nasdanika.web.resources/bootstrap/css/bootstrap-theme.min.css"),							
+						htmlFactory.tag(TagName.link)
+							.attribute("rel", "stylesheet")
+							.attribute("href", context.getContextURL()+"/doc/bundle/org.nasdanika.web.resources/font-awesome/css/font-awesome.min.css"),							
+						htmlFactory.tag(TagName.link)
+							.attribute("rel", "stylesheet")
+							.attribute("href", context.getContextURL()+"/doc/bundle/org.nasdanika.web.resources/css/lightbox.css"),							
 						htmlFactory.tag(TagName.link)
 							.attribute("rel", "stylesheet")
 							.attribute("href", context.getContextURL()+"/doc/resources/highlight/styles/github.css"),							
@@ -72,8 +85,18 @@ public class DocAppRoute implements Route {
 						htmlFactory.tag(TagName.link)
 							.attribute("rel", "stylesheet")
 							.attribute("href", context.getContextURL()+"/doc/resources/jstree/themes/default/style.min.css"),
-						htmlFactory.tag(TagName.script, "")
-							.attribute("src", context.getContextURL()+"/doc/resources/highlight/highlight.pack.js")), 
+							
+						// --- Scripts ---
+						htmlFactory.tag(TagName.script).attribute("src", context.getContextURL()+"/doc/bundle/org.nasdanika.web.resources/js/jquery-1.12.1.min.js"),
+						htmlFactory.tag(TagName.script).attribute("src", context.getContextURL()+"/doc/bundle/org.nasdanika.web.resources/js/underscore-min.js"),
+						htmlFactory.tag(TagName.script).attribute("src", context.getContextURL()+"/doc/bundle/org.nasdanika.web.resources/js/backbone-min.js"),
+						htmlFactory.tag(TagName.script).attribute("src", context.getContextURL()+"/doc/bundle/org.nasdanika.web.resources/bootstrap/js/bootstrap.min.js"),
+						htmlFactory.tag(TagName.script).attribute("src", context.getContextURL()+"/doc/bundle/org.nasdanika.web.resources/js/d3.min.js"), 				
+						htmlFactory.tag(TagName.script).attribute("src", context.getContextURL()+"/doc/bundle/org.nasdanika.web.resources/js/c3.min.js"),												
+						htmlFactory.tag(TagName.script).attribute("src", context.getContextURL()+"/doc/bundle/org.nasdanika.web.resources/js/require.js"),
+						htmlFactory.tag(TagName.script, htmlFactory.interpolate(getClass().getResource("require-config.js"), "base-url", context.getContextURL()+"/doc/bundle/org.nasdanika.web.resources/js")),
+						htmlFactory.tag(TagName.script).attribute("src", context.getContextURL()+"/doc/bundle/org.nasdanika.web.resources/js/lightbox.min.js"),
+						htmlFactory.tag(TagName.script).attribute("src", context.getContextURL()+"/doc/resources/highlight/highlight.pack.js")), 				
 				appPanel);
 		
 		return new Action() {

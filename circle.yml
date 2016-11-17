@@ -1,0 +1,28 @@
+machine:
+  java:
+    version: openjdk8
+  services:
+    - docker
+        
+dependencies: 
+  override:
+    - echo 'Skipping Dependency Check'
+
+test:
+    
+  override:
+    - cd org.nasdanika.informationcenter.aggregator && mvn verify
+    
+  post:
+    - docker build -t nasdanika/information-center:$CIRCLE_BUILD_NUM org.nasdanika.informationcenter.repository/target/products/org.nasdanika.informationcenter.product/linux/gtk
+    
+deployment:
+  staging:
+    branch: master
+    commands:
+    - mv org.nasdanika.informationcenter.repository/target/products/org.nasdanika.informationcenter.product-*.zip $CIRCLE_ARTIFACTS    
+    - docker login -e $DOCKER_EMAIL -u $DOCKER_USER -p $DOCKER_PASS
+    - docker push nasdanika/information-center:$CIRCLE_BUILD_NUM
+    - wget http://nasdanika.org/commons-net-1.4.1.jar
+    - wget http://nasdanika.org/jakarta-oro-2.0.8.jar    
+    - ant -verbose -f ftp-upload.xml -lib commons-net-1.4.1.jar:jakarta-oro-2.0.8.jar -Dftp.server=$DEPLOY_FTP_SERVER -Dftp.user=$DEPLOY_FTP_USER -Dftp.password=$DEPLOY_FTP_PASSWORD -Dcircle.artifacts=$CIRCLE_ARTIFACTS
