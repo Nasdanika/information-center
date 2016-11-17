@@ -20,21 +20,25 @@
 
 	<repositories>
 		<!-- configure p2 repository to resolve against -->
+		
 		<repository>
-			<id>mars</id>
-			<url>${mars-repo.url}</url>
+			<id>neon</id>
+			<url>http://download.eclipse.org/releases/neon</url>
 			<layout>p2</layout>
-		</repository>
+		</repository>		
+	
 		<repository>
 			<id>orbit</id>
-			<url>http://download.eclipse.org/tools/orbit/downloads/drops/R20150519210750/repository</url>
+			<url>http://download.eclipse.org/tools/orbit/downloads/drops/R20160520211859/repository</url>
 			<layout>p2</layout>
-		</repository>
+		</repository>		
+	
 		<repository>
 			<id>jetty</id>
-			<url>http://download.eclipse.org/jetty/updates/jetty-bundles-9.x/9.2.9.v20150224</url>
+			<url>http://download.eclipse.org/jetty/updates/jetty-bundles-9.x/9.3.9.v20160517</url>
 			<layout>p2</layout>
 		</repository>
+				
 		<repository>
 			<id>maven-osgi</id>
 			<url>http://www.nasdanika.org/maven-osgi</url>
