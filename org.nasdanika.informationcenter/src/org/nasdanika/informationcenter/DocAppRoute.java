@@ -21,7 +21,7 @@ public class DocAppRoute implements Route {
 		HTMLFactory htmlFactory = HTMLFactory.INSTANCE;
 		ApplicationPanel appPanel = htmlFactory.applicationPanel()
 				.style(Style.INFO) 
-				.header("Bounded Context Generator POC Domain Information Center")
+				.header("Nasdanika Information Center")
 				.headerLink(context.getRequest().getContextPath()+"/router/doc.html")
 				.style("margin-bottom", "0px")
 				.id("docAppPanel");

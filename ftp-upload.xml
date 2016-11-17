@@ -15,6 +15,18 @@
             </fileset>
           </ftp>
 
+	  <ftp passive="yes" action="delete" server="${ftp.server}" userid="${ftp.user}" password="${ftp.password}" remotedir="/products">
+ 	    <fileset>
+              <include name="**"/>
+            </fileset>
+          </ftp>
+
+	  <ftp passive="yes" action="rmdir" server="${ftp.server}" userid="${ftp.user}" password="${ftp.password}" remotedir="/products">
+ 	    <fileset>
+              <include name="**"/>
+            </fileset>
+          </ftp>
+
 	  <ftp passive="yes" server="${ftp.server}" userid="${ftp.user}" password="${ftp.password}">
 	    <fileset dir="${circle.artifacts}"/>
 	  </ftp>    
