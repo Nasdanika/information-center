@@ -14,39 +14,43 @@
 	</prerequisites>
 	
 	<properties>
-		<tycho-version>0.26.0</tycho-version>
-		<mars-repo.url>http://download.eclipse.org/releases/mars</mars-repo.url>
+		<tycho-version>1.2.0</tycho-version>
 	</properties>
 
 	<repositories>
 		<!-- configure p2 repository to resolve against -->
 		
 		<repository>
-			<id>neon</id>
-			<url>http://download.eclipse.org/releases/neon</url>
+			<id>photon</id>
+			<url>http://download.eclipse.org/releases/photon</url>
 			<layout>p2</layout>
 		</repository>		
 	
 		<repository>
 			<id>orbit</id>
-			<url>http://download.eclipse.org/tools/orbit/downloads/drops/R20160520211859/repository</url>
+			<url>http://download.eclipse.org/tools/orbit/downloads/drops/R20180606145124/repository</url>
 			<layout>p2</layout>
 		</repository>		
 	
 		<repository>
 			<id>jetty</id>
-			<url>http://download.eclipse.org/jetty/updates/jetty-bundles-9.x/9.3.9.v20160517</url>
+			<url>http://download.eclipse.org/jetty/updates/jetty-bundles-9.x</url>
 			<layout>p2</layout>
 		</repository>
 				
 		<repository>
 			<id>maven-osgi</id>
-			<url>http://www.nasdanika.org/maven-osgi</url>
+			<url>https://www.nasdanika.org/maven-osgi</url>
 			<layout>p2</layout>
 		</repository>
 		<repository>
 			<id>nasdanika-server</id>
-			<url>http://www.nasdanika.org/server/repository</url>
+			<url>https://www.nasdanika.org/products/server/org.nasdanika.repository/repository</url>
+			<layout>p2</layout>
+		</repository>
+		<repository>
+			<id>nasdanika-codegen</id>
+			<url>https://www.nasdanika.org/products/codegen/repository</url>
 			<layout>p2</layout>
 		</repository>
 	</repositories>

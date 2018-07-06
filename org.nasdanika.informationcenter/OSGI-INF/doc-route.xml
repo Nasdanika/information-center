@@ -5,4 +5,12 @@
       <provide interface="org.nasdanika.web.Route"/>
    </service>
    <property name="pattern" type="String" value="doc/.+"/>
+   <property name="doc-route-path" type="String" value="/router/doc"/>
+   <property name="doc-app-path" type="String" value="/router/doc.html"/>
+   <reference bind="setCdoSessionProvider" cardinality="1..1" interface="org.eclipse.emf.cdo.session.CDOSessionProvider" name="CDOSessionProvider" policy="static"/>
+   <reference bind="setServiceComponentRuntime" cardinality="0..1" interface="org.osgi.service.component.runtime.ServiceComponentRuntime" name="ServiceComponentRuntime" policy="static"/>
+   <property name="bundle-toc" type="Boolean" value="false"/>
+   <property name="package-includes" type="String" value="urn:org\.nasdanika\..+"/>
+   <property name="session-registry" type="Boolean" value="false"/>
+   <property name="bundle-includes" type="String" value="org\.nasdanika\..+"/>      
 </scr:component>

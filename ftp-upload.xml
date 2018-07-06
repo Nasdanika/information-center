@@ -3,27 +3,9 @@
     
   <target name="upload">
 
-	  <ftp passive="yes" action="delete" server="${ftp.server}" userid="${ftp.user}" password="${ftp.password}" remotedir="/repository">
+	  <ftp passive="yes" action="delete" server="${ftp.server}" userid="${ftp.user}" password="${ftp.password}" remotedir="/">
  	    <fileset>
-              <include name="**"/>
-            </fileset>
-          </ftp>
-
-	  <ftp passive="yes" action="rmdir" server="${ftp.server}" userid="${ftp.user}" password="${ftp.password}" remotedir="/repository">
- 	    <fileset>
-              <include name="**"/>
-            </fileset>
-          </ftp>
-
-	  <ftp passive="yes" action="delete" server="${ftp.server}" userid="${ftp.user}" password="${ftp.password}" remotedir="/products">
- 	    <fileset>
-              <include name="**"/>
-            </fileset>
-          </ftp>
-
-	  <ftp passive="yes" action="rmdir" server="${ftp.server}" userid="${ftp.user}" password="${ftp.password}" remotedir="/products">
- 	    <fileset>
-              <include name="**"/>
+              <include name="org.nasdanika.informationcenter.product-*.zip"/>
             </fileset>
           </ftp>
 

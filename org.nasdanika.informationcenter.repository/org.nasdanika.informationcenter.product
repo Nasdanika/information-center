@@ -9,14 +9,13 @@
    <launcherArgs>
       <programArgs>-consoleLog -console
       </programArgs>
-      <vmArgs>-Declipse.ignoreApp=true -Dosgi.noShutdown=true -Dorg.osgi.service.http.port=8080  -Dorg.eclipse.equinox.http.jetty.context.path=/information-center
+      <vmArgs>-Declipse.ignoreApp=true -Dosgi.noShutdown=true -Dorg.osgi.service.http.port=8080  -Dorg.eclipse.equinox.http.jetty.context.path=/information-center --add-modules=ALL-SYSTEM
       </vmArgs>
       <vmArgsMac>-XstartOnFirstThread -Dorg.eclipse.swt.internal.carbon.smallFonts
       </vmArgsMac>
    </launcherArgs>
 
    <launcher>
-      <solaris/>
       <win useIco="false">
          <bmp/>
       </win>
@@ -40,8 +39,8 @@
       <plugin id="org.eclipse.equinox.http.jetty" autoStart="true" startLevel="0" />
       <plugin id="org.eclipse.equinox.http.registry" autoStart="true" startLevel="0" />
       <plugin id="org.eclipse.osgi" autoStart="true" startLevel="-1" />
+      <plugin id="org.nasdanika.cdo.web" autoStart="true" startLevel="0" />
       <plugin id="org.nasdanika.informationcenter" autoStart="true" startLevel="0" />
-      <plugin id="org.nasdanika.cdo.web" autoStart="true" startLevel="0" />      
    </configurations>
 
 </product>

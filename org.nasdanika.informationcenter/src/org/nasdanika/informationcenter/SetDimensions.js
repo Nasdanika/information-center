@@ -1,4 +1,4 @@
-require(['jquery', '/information-center/router/doc/resources/js/left-panel.js'], function(jQuery, tocTreePromise) { // TODO - context path (information-center) from token ${contextPath}
+require(['jquery', '/information-center/router/doc/resources/js/left-panel.js'], function(jQuery, tocTreePromise) { 
 	
 	// Set padding to 0 in panel body.
 	jQuery("#docAppPanel > div.panel-body").css("padding", "0px");
